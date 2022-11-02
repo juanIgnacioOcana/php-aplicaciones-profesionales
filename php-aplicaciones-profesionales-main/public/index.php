@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spaghetti</title>
-    <!-- <link rel="stylesheet" href="assets/style.css"> -->
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
     <h1>Spaghetti PHP!!!</h1>
@@ -17,6 +16,9 @@
     use Carbon\Carbon;
     use Lib\Breadcrumbs;
     use Lib\Dates;
+    use League\Plates\Engine;
+
+    $templates = new Engine('../views');
 
     $date = Carbon::now();
     echo $date->format('Y');
@@ -41,5 +43,12 @@
         <?= Dates::longDate(Dates::tomorrow()) ?>
         lo vamos a solucionar
     </p>
+
+    <?php
+    
+       echo $templates->render('template');
+
+    ?>
+
 </body>
 </html>
