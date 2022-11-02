@@ -6,6 +6,7 @@
     },
 
     "require": {
-        "nesbot/carbon": "^2.62"
+        "nesbot/carbon": "^2.62",
+        "league/plates": "^3.4"
     }
 }
