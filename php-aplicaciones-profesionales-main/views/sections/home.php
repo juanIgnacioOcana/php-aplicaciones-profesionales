@@ -1,4 +1,4 @@
-<?php $this->layout('layout') ?>
+<?php $this->layout('layouts/layout') ?>
 
 <h1>Separando las vistas</h1>
 
@@ -6,7 +6,7 @@
 
 <p>Estamos en el entorno <?= $_ENV["MODE"] ?>.</p>
 
-<?php $this->insert('partials/some-markup', ['title' => 'El titulo']); ?>
+<?php $this->insert('partials/some-markup', ['courseTitle' => 'El titulo']); ?>
 
 <?php $this->start('footerLinks') ?>
 
