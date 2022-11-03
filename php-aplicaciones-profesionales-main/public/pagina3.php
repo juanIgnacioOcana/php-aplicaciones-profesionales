@@ -6,4 +6,4 @@
 
    $templates = new Engine('../views');
 
-    echo $templates->render('pagina2');
+    echo $templates->render('pagina3');
