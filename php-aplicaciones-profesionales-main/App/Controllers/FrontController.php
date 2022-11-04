@@ -20,4 +20,14 @@ class FrontController {
         echo $this->templates->render('sections/404');
     }
 
+    public function otraCarpeta(){
+        echo $this->templates->render('sections/otra');
+    }
+
+    public function producto($id){
+        echo $this->templates->render('sections/producto',[
+            'id' => $id
+        ]);
+    }
+
 }
