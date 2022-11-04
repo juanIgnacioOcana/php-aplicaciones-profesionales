@@ -1,4 +1,4 @@
-<?php $this->layout('<layouts/layout') ?>
+<?php $this->layout('layouts/layout') ?>
 
 <h1>Página no encontrada</h1>
 
