@@ -9,6 +9,7 @@
     "require": {
         "nesbot/carbon": "^2.62",
         "league/plates": "^3.4",
-        "altorouter/altorouter": "^2.0"
+        "altorouter/altorouter": "^2.0",
+        "vlucas/phpdotenv": "^5.5"
     }
 }
