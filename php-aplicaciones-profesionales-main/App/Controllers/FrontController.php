@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\Manual;
 use League\Plates\Engine;
 
 class FrontController {
@@ -13,6 +14,8 @@ class FrontController {
     }
 
     public function home() {
+        $manualModel = new Manual;
+        $manualModel->getAll();
         echo $this->templates->render('sections/home');
     }
 

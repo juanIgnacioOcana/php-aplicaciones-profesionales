@@ -1,6 +1,6 @@
 Estas en el video 7 de Buenas prácticas Php
 
-en el min 0h06min51s
+en el min 0h37min08s
 
 
 Funciona css en :
