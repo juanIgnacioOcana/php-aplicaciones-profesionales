@@ -15,8 +15,10 @@ class FrontController {
 
     public function home() {
         $manualModel = new Manual;
-        $manualModel->getAll();
-        echo $this->templates->render('sections/home');
+        $manuals = $manualModel->getAll();
+        echo $this->templates->render('sections/home', [
+            'manuals' => $manuals,
+        ]);
     }
 
     public function error404(){

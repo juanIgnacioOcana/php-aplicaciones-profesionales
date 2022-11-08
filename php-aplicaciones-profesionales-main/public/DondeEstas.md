@@ -1,7 +1,10 @@
 Estas en el video 7 de Buenas prácticas Php
 
-en el min 0h37min08s
+en el min 0h58min25s
+Repasar desde 38:32
 
+Se muestra en pantalla un solo manual, deberían aparecer todos los manuales en :
+http://cursophp.es/
 
 Funciona css en :
 404.php
