@@ -1,45 +1,48 @@
-    
-    <?php
-    
-    require '../vendor/autoload.php';
+<?php
 
-    use Dotenv\Dotenv;
+  require '../vendor/autoload.php';
 
-    $dotenv = Dotenv::createImmutable('../');
-    $dotenv->load();
+  use Dotenv\Dotenv;
 
-    //echo $_ENV["MODE"];
-    
-    $router = new AltoRouter();
+  $dotenv = Dotenv::createImmutable('../');
+  $dotenv->load();
 
-    $router->map( 'GET', '/', 'FrontController#home', 'home' );
-    $router->map( 'GET', '/otra/carpeta', 'FrontController#otraCarpeta');
-    $router->map( 'GET', '/producto/[i:id]', 'FrontController#producto');
-    
-    $match = $router->match();
+  $router = new AltoRouter();
 
-    if ($match === false) {
-        open404Error();
-    }else{
-        callController($match);
-    }
+  $router->map( 'GET', '/', 'FrontController#home', 'home' );
+  $router->map( 'GET', '/otra/carpeta', 'FrontController#otraCarpeta' );
+  $router->map( 'GET', '/producto/[i:id]', 'FrontController#producto' );
+  $router->map( 'GET', '/manuales/nuevo', 'ManualController#insert' );
+  $router->map( 'POST', '/manuales/nuevo', 'ManualController#save' );
+  $router->map( 'GET', '/manuales/[*:slug]/editar', 'ManualController#edit' );
+  $router->map( 'POST', '/manuales/[*:slug]/editar', 'ManualController#edit' );
+  $router->map( 'GET', '/manuales/[*:slug]', 'ManualController#single' );
+  $router->map( 'POST', '/manuales/buscar', 'ManualController#search' );
 
-    
-    function open404Error(){
-        header( $_SERVER["SERVER_PROTOCOL"] . '404 Not Found');
-        $controllerObject = new App\Controllers\FrontController;
-        $controllerObject->error404();
-    }
-   
-    function callController($match){
-        list($controller, $action) = explode('#', $match['target']);
-        $controller = 'App\\Controllers\\' . $controller;
-        if(method_exists($controller, $action)){
-            $controllerObject = new $controller;
-            call_user_func_array(array($controllerObject,$action), $match['params']);
-        }else{
-            open404Error();
-        }
-    }
-    
+  
+  $match = $router->match();
+
+  if ($match === false) {
+      open404Error();
+  } else {
+      callController($match);
+  }
+
+  function open404Error() {
+    header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    $controllerObject = new App\Controllers\FrontController;
+    $controllerObject->error404();
+  }
+
+  function callController($match) {
+    list( $controller, $action ) = explode( '#', $match['target'] );
+      $controller = 'App\\Controllers\\' . $controller;
+      if ( method_exists($controller, $action)) {
+          $controllerObject = new $controller;
+          call_user_func_array(array($controllerObject,$action), $match['params']);
+      } else {
+          open404Error();
+      }
+  }
+
     

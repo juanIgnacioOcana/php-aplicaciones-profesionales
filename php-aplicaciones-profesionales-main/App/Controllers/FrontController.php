@@ -4,15 +4,8 @@ namespace App\Controllers;
 use App\Models\Manual;
 use League\Plates\Engine;
 
-class FrontController {
-    private $templates;
-
-    public function __construct(){
-        $this->templates = new Engine('../views');
-        //$dotenv = Dotenv::createImmutable('../');
-        //$dotenv->load();
-    }
-
+class FrontController extends Controller {
+    
     public function home() {
         $manualModel = new Manual;
         $manuals = $manualModel->getAll();
@@ -30,7 +23,7 @@ class FrontController {
     }
 
     public function producto($id){
-        echo $this->templates->render('sections/producto',[
+        echo $this->templates->render('sections/producto', [
             'id' => $id
         ]);
     }

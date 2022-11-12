@@ -4,6 +4,8 @@
 
 <h1>Manuales</h1>
 
+<?= $this->insert('partials/search-form') ?>
+
  <?php foreach($manuals as $manual): ?>
     <div class="manual">
         <h2> <?= $manual['title'] ?> </h2>

@@ -1,9 +1,12 @@
 Estas en el video 7 de Buenas prácticas Php
 
-en el min 0h58min25s
-Repasar desde 38:32
+en el min 1h37min25s
 
-Se muestra en pantalla un solo manual, deberían aparecer todos los manuales en :
+
+Funciona apacece el listado de manuales, pero falla al cargar el home => solucionado
+Estaba la variable $temaplates como private y no se podía ver desde la herencia debe ser: protected $templates;
+Tarea => habilitar Debug en servidor Apache
+Habilitado display_errors en Apache
 http://cursophp.es/
 
 Funciona css en :
