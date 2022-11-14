@@ -4,7 +4,7 @@
 
 <h1>Editar <?= $manual['title'] ?></h1>
 
-<?php if(count($errors) !== 0): ?>
+  <?php if(count($errors) !== 0): ?>
     <div class="errors">
         Hay errores en el formulario:
         <ul>
@@ -15,8 +15,14 @@
     </div>
 <?php endif; ?>
 
+
 <?php if($msg !== ''): ?>
     <div class="success">
         <?= $msg ?>
     </div>
-<?php endif; ?>        
+<?php endif; ?>     
+
+<?= $this->insert('sections/manuals/partials/manual-form',[
+    'data' => $data,
+    'manual' => $manual,
+]); ?>

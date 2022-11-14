@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <img src="/assets/images/logo.svg" alt="logo">
+        <a href="/"> <img src="/assets/images/logo.svg" alt="logo"></a>
     </header>
     <main>
     <?= $this->section('content');?>

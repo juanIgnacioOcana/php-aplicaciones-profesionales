@@ -13,7 +13,7 @@ class ManualController extends Controller {
             open404Error();
             exit;
         }
-        echo $this->templates->render('sections//manual_single', [
+        echo $this->templates->render('sections/manuals/manual_single', [
             'manual' => $manual
         ]);
     }
@@ -24,7 +24,7 @@ class ManualController extends Controller {
         //$query = filter_var($query, FILTER_SANITIZE_STRING);
         $manualModel = new Manual;
         $manuals = $manualModel->search($query);
-        echo $this->templates->render('sections/manual_search', [
+        echo $this->templates->render('sections/manuals/manual_search', [
             'manuals' => $manuals,
             'query' => $query,
         ]);
@@ -59,11 +59,17 @@ class ManualController extends Controller {
                 }
             }
         }
-        echo $this->templates->render('sections/manual_edit', [
+        echo $this->templates->render('sections/manuals/manual_edit', [
             'manual' => $manual,
             'errors' => $errors,
             'data' => $data,
             'msg' => $msg ?? ''
+        ]);
+    }
+
+    public function insert() {
+        echo $this->templates->render('sections/manuals/manual_insert', [
+            
         ]);
     }
 

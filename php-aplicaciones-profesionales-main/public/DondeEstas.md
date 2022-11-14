@@ -1,6 +1,6 @@
-Estas en el video 7 de Buenas prácticas Php
+Estas en el video 8 de Buenas prácticas Php
 
-en el min 1h37min25s
+en : 0H 13 Min 18s
 
 
 Funciona apacece el listado de manuales, pero falla al cargar el home => solucionado
