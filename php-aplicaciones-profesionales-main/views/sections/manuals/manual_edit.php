@@ -4,17 +4,7 @@
 
 <h1>Editar <?= $manual['title'] ?></h1>
 
-  <?php if(count($errors) !== 0): ?>
-    <div class="errors">
-        Hay errores en el formulario:
-        <ul>
-            <?php foreach($errors as $error): ?>
-                <li><?= $error ?></li>
-            <?php endforeach ?>    
-        </ul>    
-    </div>
-<?php endif; ?>
-
+<?= $this->insert('partials/errors',[ 'errors' => $errors,]) ?>
 
 <?php if($msg !== ''): ?>
     <div class="success">
@@ -25,4 +15,5 @@
 <?= $this->insert('sections/manuals/partials/manual-form',[
     'data' => $data,
     'manual' => $manual,
+    'action' => $action,
 ]); ?>

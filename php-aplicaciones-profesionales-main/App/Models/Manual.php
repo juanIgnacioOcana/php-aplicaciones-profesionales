@@ -70,6 +70,7 @@ class Manual {
 
     public function insert($data) {
         $ssql = "INSERT INTO manuals (manuals.title, manuals.order, manuals.slug) VALUES (:title, :order, :slug)";
+        //$ssql = "INSERT INTO manuals (manuals.title, manuals.order) VALUES (:title, :order)";
         $prepared = $this->connection->prepare($ssql);
         $isOk = $prepared->execute([
           'title' => $data['title'],
@@ -79,9 +80,9 @@ class Manual {
         if($isOk) {
           return $this->connection->lastInsertId();
         } 
-        // echo $prepared->debugDumpParams();
-        // echo '<hr>';
-        // var_dump($prepared->errorInfo());
+        //echo $prepared->debugDumpParams();
+        //echo '<hr>';
+        //var_dump($prepared->errorInfo());
         return false;
       }
     
