@@ -11,14 +11,9 @@
 </p>
 
  <?php foreach($manuals as $manual): ?>
-    <div class="manual">
-        <h2> <?= $manual['title'] ?> </h2>
-        <p>
-            <?= $manual['excerpt'] ?>
-            <a href="/manuales/<?= $manual['slug'] ?>">Acceder</a>
-            <a href="/manuales/<?= $manual['slug'] ?>/editar">Editar</a>
-        </p>
-    </div>
+    <?= $this->insert('partials/manual-card', [
+      "manual" => $manual,
+  ]) ?>
  <?php endforeach ?>   
     
 <?php $this->start('footerLinks') ?>
