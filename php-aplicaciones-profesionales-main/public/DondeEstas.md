@@ -1,6 +1,6 @@
-Estas en el video 8 de Buenas prácticas Php
+Estas en el video 9 de Buenas prácticas Php
 
-en : 0H 52 Min 17s
+en : 0H 08 Min 58s
 
 Pendiente:
  NO inserta los datos nuevos en nuevo manual en la tabla

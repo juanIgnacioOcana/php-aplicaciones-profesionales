@@ -13,7 +13,7 @@ class ManualController extends Controller {
         $this->manualModel = new Manual;
     }
 
-    public  function single($slug){
+    public function single($slug){
         $manual = $this->manualModel->get($slug);
         if(is_null($manual)){
             open404Error();
@@ -76,8 +76,7 @@ class ManualController extends Controller {
 
     private function validate($data) {
         $errors = [];
-        //echo (strlen($data['title']));
-
+        
         if(((strlen($data['title']) > 100)) || (strlen($data['title']) > 100)){           
             $errors[] = 'El título debe contener entre 10 y 100 caracteres';
 
@@ -116,10 +115,10 @@ class ManualController extends Controller {
         $errors = $this->validate($data);
 
         if(count($errors) === 0){
-            $manualModel = new Manual;
-            $id = $manualModel->insert($data);
+            
+            $id = $this->manualModel->insert($data);
             if($id) {
-                $manual = $manualModel->find($id);
+                $manual = $this->manualModel->find($id);
                 header("location: /manuales/{$manual['slug']}");  
                 return false;
             }else {
